@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於我",
+    "caseStudies": "案例研究",
+    "specialties": "專長領域",
+    "contact": "聯繫方式"
+  },
+  "home": {
+    "intro": "你好，我是吳依凌",
+    "role": "使用者體驗設計師 & 研究員",
+    "specializing": "專注於區塊鏈和安全體驗設計"
+  },
+  "about": {
+    "title": "關於我",
+    "description": "一位熱衷於區塊鏈技術和安全體驗設計的UX設計師"
+  },
+  "caseStudies": {
+    "title": "案例研究",
+    "bitoPro": {
+      "title": "BitoPro專業交易中心",
+      "description": "打造專業的加密貨幣交易體驗"
+    },
+    "bitoDebt": {
+      "title": "BitoDebt債權平台",
+      "description": "建立安全的債權交易平台"
+    },
+    "ttWallet": {
+      "title": "TT Wallet推薦計畫",
+      "description": "設計具有吸引力的推薦系統"
+    },
+    "thunderCore": {
+      "title": "ThunderCore使用者研究",
+      "description": "深入理解區塊鏈使用者行為"
+    }
+  },
+  "specialties": {
+    "title": "專長領域",
+    "security": {
+      "title": "安全體驗設計",
+      "description": "創造安全且易用的使用體驗"
+    },
+    "crossChain": {
+      "title": "跨鏈使用體驗",
+      "description": "設計無縫的區塊鏈互動體驗"
+    },
+    "insights": {
+      "title": "區塊鏈設計趨勢洞察",
+      "description": "掌握新興設計趨勢"
+    }
+  },
+  "contact": {
+    "title": "聯繫我",
+    "description": "讓我們討論您的下一個專案",
+    "form": {
+      "name": "姓名",
+      "email": "電子郵件",
+      "message": "訊息",
+      "submit": "發送訊息"
+    }
+  },
+  "footer": {
+    "rights": "版權所有",
+    "social": {
+      "linkedin": "領英",
+      "twitter": "推特",
+      "github": "GitHub"
+    }
+  },
+  "theme": {
+    "light": "淺色模式",
+    "dark": "深色模式"
+  },
+  "language": {
+    "en": "English",
+    "zh": "中文"
+  }
+} 

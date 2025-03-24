@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "caseStudies": "Case Studies",
+    "specialties": "Specialties",
+    "contact": "Contact"
+  },
+  "home": {
+    "intro": "Hi, I'm Evelyn Wu",
+    "role": "UX Designer & Researcher",
+    "specializing": "Specializing in blockchain and security experience design"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "A passionate UX designer with expertise in blockchain technology and security experience design"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "bitoPro": {
+      "title": "BitoPro Professional Trading Center",
+      "description": "Designing a professional crypto trading experience"
+    },
+    "bitoDebt": {
+      "title": "BitoDebt Platform",
+      "description": "Creating a secure debt trading platform"
+    },
+    "ttWallet": {
+      "title": "TT Wallet Referral Program",
+      "description": "Designing an engaging referral system"
+    },
+    "thunderCore": {
+      "title": "ThunderCore User Research",
+      "description": "Understanding blockchain user behavior"
+    }
+  },
+  "specialties": {
+    "title": "Specialties",
+    "security": {
+      "title": "Security Experience Design",
+      "description": "Creating secure yet user-friendly experiences"
+    },
+    "crossChain": {
+      "title": "Cross-chain UX",
+      "description": "Designing seamless blockchain interactions"
+    },
+    "insights": {
+      "title": "Blockchain Design Insights",
+      "description": "Understanding emerging design trends"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "description": "Let's discuss your next project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "social": {
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "github": "GitHub"
+    }
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "en": "English",
+    "zh": "中文"
+  }
+} 
