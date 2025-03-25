@@ -12,12 +12,15 @@ const initI18next = async (lng: string, ns: string) => {
     .use(initReactI18next)
     .use(resourcesToBackend((language: string, namespace: string) => 
       import(`../locales/${language}/${namespace}.json`)))
-    .init(getOptions(lng, ns));
+    .init({
+      ...getOptions(lng, ns),
+      returnObjects: true
+    });
   return i18nInstance;
 };
 
 export function useTranslation(lng: string, ns: string, options: { keyPrefix?: string } = {}) {
-  const [t, setT] = useState<(key: string) => string>((key: string) => key);
+  const [t, setT] = useState<(key: string, options?: { returnObjects?: boolean }) => any>((key: string) => key);
   
   useEffect(() => {
     initI18next(lng, ns).then((i18nextInstance) => {

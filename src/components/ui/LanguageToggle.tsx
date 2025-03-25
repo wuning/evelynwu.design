@@ -25,27 +25,50 @@ export default function LanguageToggle({ lang }: LanguageToggleProps) {
   }, [t]);
 
   const handleLanguageChange = (newLang: Languages) => {
-    if (typeof window !== 'undefined') {
-      const currentPathname = pathname;
-      const newPathname = currentPathname.replace(`/${lang}`, `/${newLang}`);
-      router.push(newPathname);
+    if (newLang === lang) {
       setIsOpen(false);
+      return;
     }
+
+    const segments = pathname.split('/');
+    segments[1] = newLang;
+    const newPathname = segments.join('/');
+    
+    router.push(newPathname);
+    router.refresh();
+    setIsOpen(false);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.language-toggle')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="relative language-toggle">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(!isOpen);
+        }}
         className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+        aria-label={isLoaded ? t('language.switchLanguage') : 'Switch Language'}
       >
         <GlobeAltIcon className="w-4 h-4 mr-1" />
         <span className="uppercase">{lang}</span>
-        <ChevronDownIcon className="w-4 h-4 ml-1" />
+        <ChevronDownIcon className={`w-4 h-4 ml-1 transform transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden">
+        <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg overflow-hidden z-50">
           {languages.map((language) => (
             <button
               key={language}
@@ -54,8 +77,12 @@ export default function LanguageToggle({ lang }: LanguageToggleProps) {
                 language === lang ? 'bg-gray-50 dark:bg-gray-800' : ''
               }`}
             >
-              <span className="uppercase">{language}</span>
-              {isLoaded ? ` - ${t(`language.${language}`)}` : ''}
+              <span className="uppercase font-medium">{language}</span>
+              {isLoaded && (
+                <span className="ml-2 text-gray-500 dark:text-gray-400">
+                  {t(`language.${language}`)}
+                </span>
+              )}
             </button>
           ))}
         </div>

@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from '@/lib/i18n';
 import { Languages } from '@/lib/i18n-config';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import ShinyText from '@/components/ui/ShineText';
 
 interface HomePageProps {
   params: {
@@ -15,106 +16,133 @@ interface HomePageProps {
 
 export default function HomePage({ params: { lang } }: HomePageProps) {
   const { t } = useTranslation(lang, 'common');
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [translatedData, setTranslatedData] = useState({
+    skills: [] as string[],
+    caseStudies: [] as any[],
+    experiences: [] as any[]
+  });
 
-  const skills = [
-    'Open to work',
-    '18+ YoE',
-    'Hands-on expertise',
-    'Design leadership',
-    'Mixed-method research'
-  ];
-
-  const experiences = [
-    {
-      company: 'Nebula (Standard)',
-      period: '03/2023 → 10/2024',
-      location: 'New York, US • Remote',
-      position: 'Design team lead, Staff product designer at Nebula',
-      description: 'Premier independent streaming service offering exclusive content from top creators. Focused on empowering creators and providing an ad-free, subscription-based viewing experience across multiple platforms.',
-      achievements: [
-        'Led design strategy and bridged product and design, strengthened cross-functional alignment, communication, and design handoffs, as frequently praised by developers in retrospectives.',
-        'Scaled the design team 1→4, multiplying feature delivery speed, number of projects in progress, and team satisfaction.',
-        'Directed core product features, led major consistency initiatives, and served as the lead hands-on designer.'
-      ]
-    },
-    {
-      company: 'Zedge, Inc.',
-      period: '05/2022 → 02/2023',
-      location: 'Vilnius, Lithuania • Remote',
-      position: 'Senior product designer at GuruShots',
-      description: 'Leading B2B2C SaaS platform in the mobile personalization space, powering content from top-tier creators to 30M+ monthly active users worldwide through Android and iOS apps.',
-      achievements: [
-        'Boosted engagement, retention, and ratings through optimized UX, gamification, custom animations, and community features.'
-      ]
-    },
-    {
-      company: '',
-      period: '07/2020 → 11/2022',
-      location: 'Vilnius, Lithuania • On-site, remote',
-      position: 'Product lead, Senior product designer at Zedge (Shortz, New initiatives team)',
-      achievements: [
-        'Co-developed an agile framework and co-led an R&D team, delivering and iterating on four products simultaneously, boosted Play Store rating from 2.1 to 4.5 stars within six months through UX optimization based on focus metrics.'
-      ]
+  useEffect(() => {
+    if (typeof t === 'function') {
+      setIsLoaded(true);
+      setTranslatedData({
+        skills: [
+          t('home.skills.openToWork'),
+          t('home.skills.experience'),
+          t('home.skills.expertise'),
+          t('home.skills.leadership'),
+          t('home.skills.research')
+        ],
+        caseStudies: [
+          {
+            title: t('caseStudies.bitoPro.title'),
+            description: t('caseStudies.bitoPro.description'),
+            role: t('caseStudies.bitoPro.role'),
+            date: '2024',
+            team: t('caseStudies.bitoPro.team'),
+            image: '/images/BitoPro_Cover Page.png',
+            tags: [
+              t('caseStudies.tags.productStrategy'),
+              t('caseStudies.tags.userResearch'),
+              t('caseStudies.tags.trading')
+            ],
+            slug: 'bitopro-trading-platform'
+          },
+          {
+            title: t('caseStudies.bitoDebt.title'),
+            description: t('caseStudies.bitoDebt.description'),
+            role: t('caseStudies.bitoDebt.role'),
+            date: '2023',
+            team: t('caseStudies.bitoDebt.team'),
+            image: '/images/BitoDebt_Cover Page.png',
+            tags: [
+              t('caseStudies.tags.security'),
+              t('caseStudies.tags.trust'),
+              t('caseStudies.tags.platform')
+            ],
+            slug: 'bitodebt-platform'
+          },
+          {
+            title: t('caseStudies.ttWallet.title'),
+            description: t('caseStudies.ttWallet.description'),
+            role: t('caseStudies.ttWallet.role'),
+            date: '2023',
+            team: t('caseStudies.ttWallet.team'),
+            image: '/images/TT Wallet Referral_Cover Page.png',
+            tags: [
+              t('caseStudies.tags.security'),
+              t('caseStudies.tags.engagement'),
+              t('caseStudies.tags.referral')
+            ],
+            slug: 'tt-wallet-referral'
+          },
+          {
+            title: t('caseStudies.thunderCore.title'),
+            description: t('caseStudies.thunderCore.description'),
+            role: t('caseStudies.thunderCore.role'),
+            date: '2022',
+            team: t('caseStudies.thunderCore.team'),
+            image: '/images/ThunderCoreDesignThinking_Cover Page.png',
+            tags: [
+              t('caseStudies.tags.research'),
+              t('caseStudies.tags.blockchain'),
+              t('caseStudies.tags.userBehavior')
+            ],
+            slug: 'thundercore-research'
+          }
+        ],
+        experiences: [
+          {
+            company: t('workExperience.companies.nebula.name'),
+            period: '03/2023 → 10/2024',
+            location: 'New York, US • Remote',
+            position: t('workExperience.companies.nebula.position'),
+            description: t('workExperience.companies.nebula.description'),
+            achievements: t('workExperience.companies.nebula.achievements', { returnObjects: true })
+          },
+          {
+            company: t('workExperience.companies.zedge.name'),
+            period: '05/2022 → 02/2023',
+            location: 'Vilnius, Lithuania • Remote',
+            position: t('workExperience.companies.zedge.position'),
+            description: t('workExperience.companies.zedge.description'),
+            achievements: t('workExperience.companies.zedge.achievements', { returnObjects: true })
+          },
+          {
+            company: t('workExperience.companies.zedgeShortz.name'),
+            period: '07/2020 → 11/2022',
+            location: 'Vilnius, Lithuania • On-site, remote',
+            position: t('workExperience.companies.zedgeShortz.position'),
+            achievements: t('workExperience.companies.zedgeShortz.achievements', { returnObjects: true })
+          }
+        ]
+      });
     }
-  ];
+  }, [t]);
 
-  const caseStudies = [
-    {
-      title: 'BitoDebt Platform',
-      description: 'From concept to exit: scaling chat fiction to +69% retention, +681% engagement, +136% conversion',
-      role: 'Senior product designer, UX researcher',
-      date: '2024 +2022',
-      team: 'From 2 to 15+ members at various stages',
-      image: '/images/test.png',
-      tags: ['Product strategy', 'User research', 'Growth design'],
-      slug: 'bitodebt-platform'
-    },
-    {
-      title: 'TT Wallet Referral',
-      description: 'Creating a secure and engaging referral program with enhanced user trust and engagement',
-      role: 'Lead UX Designer',
-      date: '2023',
-      team: 'Cross-functional team of 8',
-      image: '/images/test.png',
-      tags: ['Security UX', 'Trust design', 'Platform design'],
-      slug: 'tt-wallet-referral'
-    },
-    {
-      title: 'BitoPro Trading Platform',
-      description: 'Redesigning the trading experience to improve user confidence and trading efficiency',
-      role: 'Senior UX Designer',
-      date: '2023',
-      team: 'Core team of 6 with extended stakeholders',
-      image: '/images/test.png',
-      tags: ['Trading UX', 'Data visualization', 'Complex systems'],
-      slug: 'bitopro-trading-platform'
-    },
-    {
-      title: 'Crypto Education Hub',
-      description: 'Building an educational platform that increased new user activation by 45%',
-      role: 'Product Designer',
-      date: '2022',
-      team: 'Cross-functional team of 5',
-      image: '/images/test.png',
-      tags: ['Educational design', 'Content strategy', 'User onboarding'],
-      slug: 'crypto-education-hub'
-    }
-  ];
+  if (!isLoaded) {
+    return <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
+      <div className="text-gray-600 dark:text-gray-400">Loading...</div>
+    </div>;
+  }
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section with narrower width for better readability */}
       <div className="container max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-          Hey, I'm Evelyn Wu, a product design lead,
+          {isLoaded ? t('home.intro') : ''}
         </h1>
         <p className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-700 dark:text-gray-300 mb-12">
-          driving growth and market fit through discovery & optimization, and enabling teams with data, empathy, and craft.
+          {isLoaded ? t('home.role') : ''}
+          <br />
+          {isLoaded ? t('home.specializing') : ''}
         </p>
         
         {/* Skills Tags with improved spacing */}
         <div className="flex flex-wrap gap-3 mb-10">
-          {skills.map((skill) => (
+          {translatedData.skills.map((skill) => (
             <span
               key={skill}
               className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-sm"
@@ -130,20 +158,20 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
             href={`/${lang}/contact`}
             className="inline-flex items-center px-6 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
           >
-            Reach out
+            <ShinyText text={isLoaded ? t('home.cta.reachOut') : ''} disabled={false} speed={3} className='' />
           </Link>
           <Link
             href={`/${lang}/about`}
             className="inline-flex items-center px-6 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
           >
-            Connect
+            {isLoaded ? t('home.cta.connect') : ''}
           </Link>
           <a
             href="/cv.pdf"
             download
             className="inline-flex items-center px-6 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
           >
-            Download CV
+            {isLoaded ? t('home.cta.downloadCV') : ''}
           </a>
         </div>
       </div>
@@ -151,9 +179,11 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
       {/* Showcase Section with full width for images and contained text */}
       <section className="py-16 border-t border-gray-200 dark:border-gray-800">
         <div className="container max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="text-3xl font-bold mb-12 text-gray-900 dark:text-white">Case Studies</h2>
+          <h2 className="text-3xl font-bold mb-12 text-gray-900 dark:text-white">
+            {isLoaded ? t('caseStudies.title') : ''}
+          </h2>
           <div className="grid grid-cols-1 gap-16">
-            {caseStudies.map((study, index) => (
+            {translatedData.caseStudies.map((study, index) => (
               <div key={index} className="group">
                 <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-800">
                   <Image
@@ -173,7 +203,7 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
                     <span>{study.team}</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {study.tags.map((tag) => (
+                    {study.tags.map((tag: string) => (
                       <span
                         key={tag}
                         className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-sm"
@@ -187,9 +217,65 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
                       href={`/${lang}/case-studies/${study.slug}`}
                       className="inline-flex items-center px-6 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
                     >
-                      View case study <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
+                      {isLoaded ? t('caseStudies.viewCaseStudy') : ''} <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
                     </Link>
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Work Experience Section with optimal reading width */}
+      <section className="py-16 border-t border-gray-200 dark:border-gray-800">
+        <div className="container max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+              {isLoaded ? t('workExperience.title') : ''}
+            </h2>
+            <div className="flex gap-4">
+              <a
+                href="/cv.pdf"
+                download
+                className="inline-flex items-center px-6 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+              >
+                {isLoaded ? t('workExperience.downloadCV') : ''}
+              </a>
+              <a
+                href="https://linkedin.com/in/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              >
+                {isLoaded ? t('workExperience.seeLinkedIn') : ''} <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
+              </a>
+            </div>
+          </div>
+
+          <div className="space-y-16">
+            {translatedData.experiences.map((exp, index) => (
+              <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-8">
+                {/* Company Info */}
+                <div className="md:col-span-4">
+                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{exp.company}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{exp.period}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</p>
+                </div>
+
+                {/* Role & Achievements */}
+                <div className="md:col-span-8">
+                  <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{exp.position}</h4>
+                  {exp.description && (
+                    <p className="text-gray-600 dark:text-gray-300 italic mb-4">{exp.description}</p>
+                  )}
+                  <ul className="space-y-3">
+                    {exp.achievements.map((achievement: string, i: number) => (
+                      <li key={i} className="text-gray-700 dark:text-gray-300">
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -285,60 +371,6 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Work Experience Section with optimal reading width */}
-      <section className="py-16 border-t border-gray-200 dark:border-gray-800">
-        <div className="container max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Work experience</h2>
-            <div className="flex gap-4">
-              <a
-                href="/cv.pdf"
-                download
-                className="inline-flex items-center px-6 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
-              >
-                Download full CV
-              </a>
-              <a
-                href="https://linkedin.com/in/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-              >
-                See on LinkedIn <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
-              </a>
-            </div>
-          </div>
-
-          <div className="space-y-16">
-            {experiences.map((exp, index) => (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                {/* Company Info */}
-                <div className="md:col-span-4">
-                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{exp.company}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{exp.period}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</p>
-                </div>
-
-                {/* Role & Achievements */}
-                <div className="md:col-span-8">
-                  <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{exp.position}</h4>
-                  {exp.description && (
-                    <p className="text-gray-600 dark:text-gray-300 italic mb-4">{exp.description}</p>
-                  )}
-                  <ul className="space-y-3">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="text-gray-700 dark:text-gray-300">
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

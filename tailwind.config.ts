@@ -9,6 +9,15 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
+      keyframes: {
+        shine: {
+        '0%': { 'background-position': '100%' },
+                   '100%': { 'background-position': '-100%' },
+                 },
+               },
+               animation: {
+                 shine: 'shine 5s linear infinite',
+               },
       colors: {
         primary: {
           50: '#f5f3ff',

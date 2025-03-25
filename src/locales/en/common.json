@@ -9,7 +9,19 @@
   "home": {
     "intro": "Hi, I'm Evelyn Wu",
     "role": "UX Designer & Researcher",
-    "specializing": "Specializing in blockchain and security experience design"
+    "specializing": "Specializing in blockchain and security experience design",
+    "skills": {
+      "openToWork": "Open to work",
+      "experience": "18+ YoE",
+      "expertise": "Hands-on expertise",
+      "leadership": "Design leadership",
+      "research": "Mixed-method research"
+    },
+    "cta": {
+      "reachOut": "Reach out",
+      "connect": "Connect",
+      "downloadCV": "Download CV"
+    }
   },
   "about": {
     "title": "About Me",
@@ -17,21 +29,43 @@
   },
   "caseStudies": {
     "title": "Case Studies",
+    "viewCaseStudy": "View case study",
+    "tags": {
+      "productStrategy": "Product strategy",
+      "userResearch": "User research",
+      "trading": "Trading UX",
+      "security": "Security UX",
+      "trust": "Trust design",
+      "platform": "Platform design",
+      "engagement": "User engagement",
+      "referral": "Referral system",
+      "research": "Research methods",
+      "blockchain": "Blockchain",
+      "userBehavior": "User behavior"
+    },
     "bitoPro": {
       "title": "BitoPro Professional Trading Center",
-      "description": "Designing a professional crypto trading experience"
+      "description": "Designing a professional crypto trading experience",
+      "role": "Senior Product Designer",
+      "team": "Core team of 6"
     },
     "bitoDebt": {
       "title": "BitoDebt Platform",
-      "description": "Creating a secure debt trading platform"
+      "description": "Creating a secure debt trading platform",
+      "role": "Senior Product Designer & UX Researcher",
+      "team": "Cross-functional team of 8"
     },
     "ttWallet": {
       "title": "TT Wallet Referral Program",
-      "description": "Designing an engaging referral system"
+      "description": "Designing an engaging referral system",
+      "role": "Lead UX Designer",
+      "team": "Cross-functional team of 8"
     },
     "thunderCore": {
       "title": "ThunderCore User Research",
-      "description": "Understanding blockchain user behavior"
+      "description": "Understanding blockchain user behavior",
+      "role": "UX Researcher",
+      "team": "Research team of 5"
     }
   },
   "specialties": {
@@ -73,6 +107,39 @@
   },
   "language": {
     "en": "English",
-    "zh": "中文"
+    "zh": "Chinese",
+    "switchLanguage": "Switch Language"
+  },
+  "workExperience": {
+    "title": "Work Experience",
+    "downloadCV": "Download full CV",
+    "seeLinkedIn": "See on LinkedIn",
+    "companies": {
+      "nebula": {
+        "name": "Nebula (Standard)",
+        "position": "Design team lead, Staff product designer at Nebula",
+        "description": "Premier independent streaming service offering exclusive content from top creators. Focused on empowering creators and providing an ad-free, subscription-based viewing experience across multiple platforms.",
+        "achievements": [
+          "Led design strategy and bridged product and design, strengthened cross-functional alignment, communication, and design handoffs, as frequently praised by developers in retrospectives.",
+          "Scaled the design team 1→4, multiplying feature delivery speed, number of projects in progress, and team satisfaction.",
+          "Directed core product features, led major consistency initiatives, and served as the lead hands-on designer."
+        ]
+      },
+      "zedge": {
+        "name": "Zedge, Inc.",
+        "position": "Senior product designer at GuruShots",
+        "description": "Leading B2B2C SaaS platform in the mobile personalization space, powering content from top-tier creators to 30M+ monthly active users worldwide through Android and iOS apps.",
+        "achievements": [
+          "Boosted engagement, retention, and ratings through optimized UX, gamification, custom animations, and community features."
+        ]
+      },
+      "zedgeShortz": {
+        "name": "",
+        "position": "Product lead, Senior product designer at Zedge (Shortz, New initiatives team)",
+        "achievements": [
+          "Co-developed an agile framework and co-led an R&D team, delivering and iterating on four products simultaneously, boosted Play Store rating from 2.1 to 4.5 stars within six months through UX optimization based on focus metrics."
+        ]
+      }
+    }
   }
 } 

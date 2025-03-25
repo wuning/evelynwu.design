@@ -9,7 +9,19 @@
   "home": {
     "intro": "你好，我是吳依凌",
     "role": "使用者體驗設計師 & 研究員",
-    "specializing": "專注於區塊鏈和安全體驗設計"
+    "specializing": "專注於區塊鏈和安全體驗設計",
+    "skills": {
+      "openToWork": "開放合作",
+      "experience": "18年以上經驗",
+      "expertise": "專業技能",
+      "leadership": "設計領導",
+      "research": "多元研究方法"
+    },
+    "cta": {
+      "reachOut": "聯繫我",
+      "connect": "了解更多",
+      "downloadCV": "下載履歷"
+    }
   },
   "about": {
     "title": "關於我",
@@ -17,21 +29,43 @@
   },
   "caseStudies": {
     "title": "案例研究",
+    "viewCaseStudy": "查看案例",
+    "tags": {
+      "productStrategy": "產品策略",
+      "userResearch": "使用者研究",
+      "trading": "交易體驗",
+      "security": "安全設計",
+      "trust": "信任機制",
+      "platform": "平台設計",
+      "engagement": "用戶參與",
+      "referral": "推薦系統",
+      "research": "研究方法",
+      "blockchain": "區塊鏈",
+      "userBehavior": "用戶行為"
+    },
     "bitoPro": {
       "title": "BitoPro專業交易中心",
-      "description": "打造專業的加密貨幣交易體驗"
+      "description": "打造專業的加密貨幣交易體驗",
+      "role": "資深產品設計師",
+      "team": "核心團隊6人"
     },
     "bitoDebt": {
       "title": "BitoDebt債權平台",
-      "description": "建立安全的債權交易平台"
+      "description": "建立安全的債權交易平台",
+      "role": "資深產品設計師 & UX研究員",
+      "team": "跨職能團隊8人"
     },
     "ttWallet": {
       "title": "TT Wallet推薦計畫",
-      "description": "設計具有吸引力的推薦系統"
+      "description": "設計具有吸引力的推薦系統",
+      "role": "首席UX設計師",
+      "team": "跨職能團隊8人"
     },
     "thunderCore": {
       "title": "ThunderCore使用者研究",
-      "description": "深入理解區塊鏈使用者行為"
+      "description": "深入理解區塊鏈使用者行為",
+      "role": "UX研究員",
+      "team": "研究團隊5人"
     }
   },
   "specialties": {
@@ -73,6 +107,39 @@
   },
   "language": {
     "en": "English",
-    "zh": "中文"
+    "zh": "中文",
+    "switchLanguage": "切換語言"
+  },
+  "workExperience": {
+    "title": "工作經驗",
+    "downloadCV": "下載完整履歷",
+    "seeLinkedIn": "查看 LinkedIn",
+    "companies": {
+      "nebula": {
+        "name": "Nebula (Standard)",
+        "position": "設計團隊負責人，資深產品設計師",
+        "description": "頂級獨立串流服務平台，提供創作者專屬內容。專注於賦能創作者並提供無廣告、訂閱制的跨平台觀看體驗。",
+        "achievements": [
+          "領導設計策略並連結產品與設計，加強跨職能團隊的協調、溝通和設計交付，在回顧會議中經常獲得開發人員的讚賞。",
+          "將設計團隊從1人擴展到4人，提升功能交付速度、進行中專案數量和團隊滿意度。",
+          "指導核心產品功能開發，領導主要一致性計劃，並擔任主要設計師。"
+        ]
+      },
+      "zedge": {
+        "name": "Zedge, Inc.",
+        "position": "GuruShots 資深產品設計師",
+        "description": "行動個人化領域的領先 B2B2C SaaS 平台，通過 Android 和 iOS 應用為全球超過3000萬月活用戶提供頂級創作者的內容。",
+        "achievements": [
+          "通過優化用戶體驗、遊戲化機制、自定義動畫和社群功能，提升用戶參與度、留存率和評分。"
+        ]
+      },
+      "zedgeShortz": {
+        "name": "",
+        "position": "Zedge (Shortz) 產品負責人，資深產品設計師",
+        "achievements": [
+          "共同開發敏捷框架並共同領導研發團隊，同時交付和迭代四個產品，通過基於關鍵指標的用戶體驗優化，在六個月內將 Play Store 評分從 2.1 提升至 4.5。"
+        ]
+      }
+    }
   }
 } 
