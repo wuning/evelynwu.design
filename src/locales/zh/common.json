@@ -7,15 +7,16 @@
     "contact": "聯繫方式"
   },
   "home": {
-    "intro": "你好，我是吳依凌",
-    "role": "使用者體驗設計師 & 研究員",
-    "specializing": "專注於區塊鏈和安全體驗設計",
+    "intro": "Hi, I'm Evelyn Wu",
+    "role": "A senior product designer",
+    "specializing": "經驗豐富的產品設計師，專注於區塊鏈技術，並致力於產品實現。我擅長將複雜的技術概念轉化為直覺、使用者友善的介面。",
     "skills": {
-      "openToWork": "開放合作",
-      "experience": "18年以上經驗",
-      "expertise": "專業技能",
-      "leadership": "設計領導",
-      "research": "多元研究方法"
+      "openToWork": "遠端工作",
+      "experience": "10＋年以上經驗",
+      "expertise": "６＋年區塊鏈領域",
+      "productStrategy": "產品策略",
+      "Multilingual":"多國語言",
+      "Form0to1":"從 0 到 1"
     },
     "cta": {
       "reachOut": "聯繫我",
@@ -30,6 +31,10 @@
   "caseStudies": {
     "title": "案例研究",
     "viewCaseStudy": "查看案例",
+    "viewLiveWebsite": "查看網站",
+    "downloadApp": "下載 App",
+    "overview": "概述",
+    "businessImpact": "商業影響",
     "tags": {
       "productStrategy": "產品策略",
       "userResearch": "使用者研究",
@@ -41,31 +46,85 @@
       "referral": "推薦系統",
       "research": "研究方法",
       "blockchain": "區塊鏈",
-      "userBehavior": "用戶行為"
+      "userBehavior": "用戶行為",
+      "Growthdesign":"成長設計",
+      "Iteration":"迭代",
+      "Designsystem":"設計系統",
+      "Form0to1":"Form 0 to 1",
+      "Multi-DeviceWebsite":"跨裝置網頁",
+      "HeatMap":"熱點分析",
+      "Cross-productcollaboration":"跨產品合作",
+      "Appdesign":"App設計",
+      "Ecosystem":"生態系統",
+      "EVMfork":"EVM分叉",
+      "Multilingual":"多國語言"
     },
     "bitoPro": {
       "title": "BitoPro專業交易中心",
       "description": "打造專業的加密貨幣交易體驗",
       "role": "資深產品設計師",
-      "team": "核心團隊6人"
+      "team": "核心團隊6人",
+      "businessImpacts": [
+        "通過改進用戶體驗和新功能，使交易量增長45%",
+        "新交易界面獲得92%的用戶滿意度",
+        "關鍵交易操作的用戶錯誤減少60%",
+        "成功在多個亞洲市場推出"
+      ],
+      "projectDescriptions": [
+        "資深產品設計師",
+        "2024",
+        "核心團隊6人"
+      ]
     },
     "bitoDebt": {
-      "title": "BitoDebt債權平台",
-      "description": "建立安全的債權交易平台",
-      "role": "資深產品設計師 & UX研究員",
-      "team": "跨職能團隊8人"
+      "title": "BitoDebt 產品從0到1迭代：轉換率從22%提升至100%，交易額增長57%，用戶滿意度達4.6/5分，成為公司穩定核心業務。",
+    
+      "businessImpacts": [
+        "22%提升至100%，交易額增長57%，用戶滿意度達4.6/5分，成為公司穩定核心業務",
+        "從實驗性產品成長為公司核心業務線，佔總收入25%",
+        "開創台灣首個成功的虛擬貨幣債權理財產品，成為行業標桿",
+        "設計行銷故事包裝"
+      ],
+      "projectDescriptions": [
+        "Design Owner",
+        "2019 → 2020",
+        "3-10 位不同部門協作人員",
+        "跨裝置網頁"
+      ]
     },
     "ttWallet": {
-      "title": "TT Wallet推薦計畫",
-      "description": "設計具有吸引力的推薦系統",
-      "role": "首席UX設計師",
-      "team": "跨職能團隊8人"
+      "title": "TT Wallet 推薦計畫：推動平台幣價格上漲 16%，用戶增長 20%",
+      "description": "為了推動 TT Wallet 跟 ThunderCore 鏈生態圈發展，設計了整合 TT Mining 的推薦系統，確保無縫的使用者參與。透過數據驅動與用戶研究，創造了一個既能促進用戶成長又能增強生態系統流動性的功能，面對業務需求的複雜性與假帳號的挑戰，我設計的解決方案在上線一個月內帶來 MAU 20% 的成長，並透過 NFT 獎勵機制顯著提升用戶資產流動。",
+
+      "businessImpacts": [
+        "月活躍用戶 (MAU) 增長 20%",
+        "推薦計畫上線一個月內新增用戶比例上升 5%",
+        "減少 65% 假帳號(白瞟仔)註冊，提高生態系統健康度",
+        "用戶資產流動性提升 30%，增強生態系統穩定性",
+        "NFT 獎勵的平均開啟率達 87%"
+      ],
+      "projectDescriptions": [
+        "產品設計師 ",
+        "2022.06-08, 2 months",
+        "跨職能團隊 8 人",
+        "iOS/Android App"
+      ]
     },
     "thunderCore": {
       "title": "ThunderCore使用者研究",
       "description": "深入理解區塊鏈使用者行為",
-      "role": "UX研究員",
-      "team": "研究團隊5人"
+
+      "businessImpacts": [
+        "識別關鍵用戶痛點，使用戶滿意度提升35%",
+        "研究發現促使用戶流失率降低25%",
+        "建議實施後日活躍用戶增加40%",
+        "建立區塊鏈應用的新UX準則"
+      ],
+      "projectDescriptions": [
+        "UX研究員",
+        "2022",
+        "研究團隊5人"
+      ]
     }
   },
   "specialties": {

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import ShinyText from '@/components/ui/ShineText';
+import { motion } from 'framer-motion';
 
 interface HomePageProps {
   params: {
@@ -28,40 +29,46 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
       setIsLoaded(true);
       setTranslatedData({
         skills: [
-          t('home.skills.openToWork'),
-          t('home.skills.experience'),
-          t('home.skills.expertise'),
-          t('home.skills.leadership'),
-          t('home.skills.research')
+            t('home.skills.openToWork'),
+            t('home.skills.experience'),
+            t('home.skills.expertise'),
+            t('home.skills.productStrategy'),
+            t('home.skills.Multilingual'),
+            t('home.skills.Form0to1')
         ],
         caseStudies: [
-          {
-            title: t('caseStudies.bitoPro.title'),
-            description: t('caseStudies.bitoPro.description'),
-            role: t('caseStudies.bitoPro.role'),
-            date: '2024',
-            team: t('caseStudies.bitoPro.team'),
-            image: '/images/BitoPro_Cover Page.png',
-            tags: [
-              t('caseStudies.tags.productStrategy'),
-              t('caseStudies.tags.userResearch'),
-              t('caseStudies.tags.trading')
-            ],
-            slug: 'bitopro-trading-platform'
-          },
+          // {
+          //   title: t('caseStudies.bitoPro.title'),
+          //   description: t('caseStudies.bitoPro.description'),
+          //   image: '/images/BitoPro_Cover Page.png',
+          //   tags: [
+          //     t('caseStudies.tags.productStrategy'),
+          //     t('caseStudies.tags.userResearch'),
+          //     t('caseStudies.tags.trading')
+          //   ],
+          //   slug: 'bitopro-trading-platform',
+          //   businessImpacts: t('caseStudies.bitoPro.businessImpacts'),
+          //   projectDescriptions: t('caseStudies.bitoPro.projectDescriptions')
+          // },
           {
             title: t('caseStudies.bitoDebt.title'),
             description: t('caseStudies.bitoDebt.description'),
-            role: t('caseStudies.bitoDebt.role'),
-            date: '2023',
-            team: t('caseStudies.bitoDebt.team'),
             image: '/images/BitoDebt_Cover Page.png',
             tags: [
-              t('caseStudies.tags.security'),
+              t('caseStudies.tags.productStrategy'),
               t('caseStudies.tags.trust'),
-              t('caseStudies.tags.platform')
+              t('caseStudies.tags.platform'),
+              t('caseStudies.tags.Growthdesign'),
+              t('caseStudies.tags.Iteration'),
+              t('caseStudies.tags.Designsystem'),
+              t('caseStudies.tags.Form0to1'),
+              t('caseStudies.tags.Multi-DeviceWebsite'),
+              t('caseStudies.tags.HeatMap')
             ],
-            slug: 'bitodebt-platform'
+            slug: 'bitodebt-platform',
+            liveUrl: 'https://www.bitopro.com/debts',
+            businessImpacts: t('caseStudies.bitoDebt.businessImpacts', { returnObjects: true }),
+            projectDescriptions: t('caseStudies.bitoDebt.projectDescriptions')
           },
           {
             title: t('caseStudies.ttWallet.title'),
@@ -71,26 +78,37 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
             team: t('caseStudies.ttWallet.team'),
             image: '/images/TT Wallet Referral_Cover Page.png',
             tags: [
-              t('caseStudies.tags.security'),
-              t('caseStudies.tags.engagement'),
-              t('caseStudies.tags.referral')
+              t('caseStudies.tags.productStrategy'),
+              t('caseStudies.tags.trust'),
+              t('caseStudies.tags.referral'),
+              t('caseStudies.tags.Cross-productcollaboration'),
+              t('caseStudies.tags.Multilingual'),
+              t('caseStudies.tags.Ecosystem'),
+              t('caseStudies.tags.EVMfork'),
+              t('caseStudies.tags.Appdesign')
             ],
-            slug: 'tt-wallet-referral'
+            slug: 'tt-wallet-referral',
+            liveUrl: 'https://apps.apple.com/tw/app/tt%E9%8C%A2%E5%8C%85/id1471222243',
+            businessImpacts: t('caseStudies.ttWallet.businessImpacts', { returnObjects: true }),
+            projectDescriptions: t('caseStudies.ttWallet.projectDescriptions')
           },
-          {
-            title: t('caseStudies.thunderCore.title'),
-            description: t('caseStudies.thunderCore.description'),
-            role: t('caseStudies.thunderCore.role'),
-            date: '2022',
-            team: t('caseStudies.thunderCore.team'),
-            image: '/images/ThunderCoreDesignThinking_Cover Page.png',
-            tags: [
-              t('caseStudies.tags.research'),
-              t('caseStudies.tags.blockchain'),
-              t('caseStudies.tags.userBehavior')
-            ],
-            slug: 'thundercore-research'
-          }
+          // {
+          //   title: t('caseStudies.thunderCore.title'),
+          //   description: t('caseStudies.thunderCore.description'),
+          //   role: t('caseStudies.thunderCore.role'),
+          //   date: '2022',
+          //   team: t('caseStudies.thunderCore.team'),
+          //   image: '/images/ThunderCoreDesignThinking_Cover Page.png',
+          //   tags: [
+          //     t('caseStudies.tags.research'),
+          //     t('caseStudies.tags.blockchain'),
+          //     t('caseStudies.tags.userBehavior')
+          //   ],
+          //   slug: 'thundercore-research',
+          //   liveUrl: 'https://www.thundercore.com/',
+          //   businessImpacts: t('caseStudies.thunderCore.businessImpacts', { returnObjects: true }),
+          //   projectDescriptions: t('caseStudies.thunderCore.projectDescriptions')
+          // }
         ],
         experiences: [
           {
@@ -131,49 +149,87 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section with narrower width for better readability */}
       <div className="container max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12 py-12 md:py-20 lg:py-24">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white"
+        >
           {isLoaded ? t('home.intro') : ''}
-        </h1>
-        <p className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-700 dark:text-gray-300 mb-12">
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-700 dark:text-gray-300 mb-12"
+        >
           {isLoaded ? t('home.role') : ''}
           <br />
           {isLoaded ? t('home.specializing') : ''}
-        </p>
+        </motion.p>
         
         {/* Skills Tags with improved spacing */}
-        <div className="flex flex-wrap gap-3 mb-10">
-          {translatedData.skills.map((skill) => (
-            <span
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-wrap gap-3 mb-10"
+        >
+          {translatedData.skills.map((skill, index) => (
+            <motion.span
               key={skill}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
               className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-sm"
             >
               {skill}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA Buttons with better spacing and responsive layout */}
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href={`/${lang}/contact`}
-            className="inline-flex items-center px-6 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex flex-wrap gap-6 mt-16"
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <ShinyText text={isLoaded ? t('home.cta.reachOut') : ''} disabled={false} speed={3} className='' />
-          </Link>
-          <Link
-            href={`/${lang}/about`}
-            className="inline-flex items-center px-6 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            <Link
+              href={`/${lang}/contact`}
+              className="inline-flex items-center px-8 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+            >
+              <ShinyText text={isLoaded ? t('home.cta.reachOut') : ''} disabled={false} speed={3} className='' />
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {isLoaded ? t('home.cta.connect') : ''}
-          </Link>
-          <a
-            href="/cv.pdf"
-            download
-            className="inline-flex items-center px-6 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            <Link
+              href={`/${lang}/about`}
+              className="inline-flex items-center px-8 py-3.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            >
+              {isLoaded ? t('home.cta.connect') : ''}
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {isLoaded ? t('home.cta.downloadCV') : ''}
-          </a>
-        </div>
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center px-8 py-3.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            >
+              {isLoaded ? t('home.cta.downloadCV') : ''}
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Showcase Section with full width for images and contained text */}
@@ -184,44 +240,90 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
           </h2>
           <div className="grid grid-cols-1 gap-16">
             {translatedData.caseStudies.map((study, index) => (
-              <div key={index} className="group">
-                <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-800">
+              <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="group"
+              >
+                <motion.div 
+                  className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-800"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 dark:group-hover:bg-white/10 transition-colors duration-300 z-10" />
                   <Image
                     src={study.image}
                     alt={study.title}
                     fill
-                    className="object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover transform group-hover:scale-105 transition-all duration-500"
                     sizes="(max-width: 768px) 100vw, 1000px"
                   />
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{study.title}</h3>
-                  <p className="text-xl text-gray-700 dark:text-gray-300">{study.description}</p>
+                </motion.div>
+                <motion.div 
+                  className="space-y-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.2 }}
+                >
+                  <motion.h3 
+                    className="text-2xl font-bold text-gray-900 dark:text-white transform-gpu"
+                    whileHover={{ x: 10 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {study.title}
+                  </motion.h3>
                   <div className="flex flex-wrap items-center gap-x-6 text-sm text-gray-500 dark:text-gray-400">
-                    <span>{study.role}</span>
-                    <span>{study.date}</span>
-                    <span>{study.team}</span>
+                    {study.projectDescriptions?.map((des: string, i: number) => (
+                        <span key={`des-${i}`}>{des}</span>
+                      ))}
+                  </div>
+                  <div className='space-y-2'>
+                    <div className='text-gray-500 dark:text-gray-400'>{isLoaded ? t('caseStudies.overview') : ''}</div>
+                    <p className="text-xl text-gray-700 dark:text-gray-300">{study.description}</p>
+                  </div>
+                  <div className='space-y-2'>
+                    <div className='text-gray-500 dark:text-gray-400'>{isLoaded ? t('caseStudies.businessImpact') : ''}</div>
+                    <ul className="text-xl text-gray-700 dark:text-gray-300 list-disc list-inside">
+                      {study.businessImpacts?.map((impact: string, i: number) => (
+                        <li key={i}>{impact}</li>
+                      ))}
+                    </ul>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {study.tags.map((tag: string) => (
-                      <span
+                      <motion.span
                         key={tag}
+                        whileHover={{ scale: 1.05, y: -2 }}
                         className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg text-sm"
                       >
                         {tag}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
-                  <div className="pt-4">
-                    <Link
-                      href={`/${lang}/case-studies/${study.slug}`}
-                      className="inline-flex items-center px-6 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
-                    >
-                      {isLoaded ? t('caseStudies.viewCaseStudy') : ''} <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
-                    </Link>
+                  <div className="pt-8 flex gap-4">
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Link
+                        href={`/${lang}/case-studies/${study.slug}`}
+                        className="inline-flex items-center px-8 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                      >
+                        {isLoaded ? t('caseStudies.viewCaseStudy') : ''} <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
+                      </Link>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <a
+                        href={study.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-8 py-3.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                      >
+                        {isLoaded ? t('caseStudies.downloadApp') : ''} <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
+                      </a>
+                    </motion.div>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -238,7 +340,7 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
               <a
                 href="/cv.pdf"
                 download
-                className="inline-flex items-center px-6 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center px-8 py-3.5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
               >
                 {isLoaded ? t('workExperience.downloadCV') : ''}
               </a>
@@ -246,7 +348,7 @@ export default function HomePage({ params: { lang } }: HomePageProps) {
                 href="https://linkedin.com/in/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-2.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                className="inline-flex items-center px-8 py-3.5 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
                 {isLoaded ? t('workExperience.seeLinkedIn') : ''} <ArrowUpRightIcon className="w-4 h-4 ml-1.5" />
               </a>

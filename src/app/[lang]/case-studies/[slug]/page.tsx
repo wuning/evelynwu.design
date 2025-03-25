@@ -121,7 +121,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="container max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12 py-12">
+      <div className="container max-w-[1000px] mx-auto px-6 sm:px-8 lg:px-12 pt-24 pb-12">
         {/* Back button */}
         <Link
           href={`/${params.lang}`}
@@ -170,7 +170,7 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         <div className="relative flex gap-12">
           {/* Side menu */}
           <div className="hidden lg:block w-48 shrink-0">
-            <div className="sticky top-8 space-y-2">
+            <div className="sticky top-[200px] space-y-2">
               <a
                 href="#background"
                 className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"

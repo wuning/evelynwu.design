@@ -8,14 +8,15 @@
   },
   "home": {
     "intro": "Hi, I'm Evelyn Wu",
-    "role": "UX Designer & Researcher",
-    "specializing": "Specializing in blockchain and security experience design",
+    "role": "A senior product designer",
+    "specializing": "Experienced product designer specializing in blockchain technology and a dedicated Product Materializer. I excel at transforming complex technical concepts into intuitive, user-friendly interfaces.",
     "skills": {
-      "openToWork": "Open to work",
-      "experience": "18+ YoE",
-      "expertise": "Hands-on expertise",
-      "leadership": "Design leadership",
-      "research": "Mixed-method research"
+      "openToWork": "Remote work",
+      "experience": "10+ years of experience",
+      "expertise": "6+ years in blockchain technology",
+      "productStrategy": "Product strategy",
+      "Multilingual":"Multilingual",
+      "Form0to1":"From 0 to 1"
     },
     "cta": {
       "reachOut": "Reach out",
@@ -30,6 +31,10 @@
   "caseStudies": {
     "title": "Case Studies",
     "viewCaseStudy": "View case study",
+    "viewLiveWebsite": "View live website",
+    "downloadApp": "Download App",
+    "overview": "Overview",
+    "businessImpact": "Business Impact",
     "tags": {
       "productStrategy": "Product strategy",
       "userResearch": "User research",
@@ -41,31 +46,84 @@
       "referral": "Referral system",
       "research": "Research methods",
       "blockchain": "Blockchain",
-      "userBehavior": "User behavior"
+      "userBehavior": "User behavior",
+      "Growthdesign": "Growth design",
+      "Iteration": "Iteration",
+      "Designsystem": "Design system",
+      "Form0to1": "From 0 to 1",
+      "Multi-DeviceWebsite": "Multi-device website",
+      "HeatMap": "Heat map",
+      "Cross-productcollaboration": "Cross-product collaboration",
+      "Multilingual": "Multilingual",
+      "Ecosystem": "Ecosystem",
+      "EVMfork": "EVM fork",
+      "Appdesign": "App design"
     },
     "bitoPro": {
       "title": "BitoPro Professional Trading Center",
       "description": "Designing a professional crypto trading experience",
       "role": "Senior Product Designer",
-      "team": "Core team of 6"
+      "team": "Core team of 6",
+      "businessImpacts": [
+        "Increased trading volume by 45% through improved UX and new features",
+        "Achieved 92% user satisfaction rate with the new trading interface",
+        "Reduced user errors by 60% in critical trading operations",
+        "Successfully launched in multiple Asian markets"
+      ],
+      "projectDescriptions": [
+        "Senior Product Designer",
+        "2024",
+        "Core team of 6"
+      ]
     },
     "bitoDebt": {
-      "title": "BitoDebt Platform",
-      "description": "Creating a secure debt trading platform",
-      "role": "Senior Product Designer & UX Researcher",
-      "team": "Cross-functional team of 8"
+      "title": "From concept to exit: scaling chat fiction to +69% retention, +681% engagement, +136% conversion",
+      "description": "Transformed a business opportunity from concept to MVP to a fully scaled product. Led end-to-end design, research, and data analysis while co-driving product decisions. Expanded Zedge's product portfolio, strengthened its position in the entertainment industry, and secured the product's acquisition by a larger competitor.",
+   
+      "businessImpacts": [
+        "Increased from 22% to 100%, with 57% growth in transaction volume, user satisfaction reaching 4.6/5, becoming a stable core business",
+        "Grew from an experimental product to a core business line, accounting for 25% of total revenue",
+        "Pioneered Taiwan's first successful virtual currency debt investment product, becoming an industry benchmark",
+        "Designed marketing story packaging"
+      ],
+      "projectDescriptions": [
+        "Senior product designer, UX researcher",
+        "2023",
+        "From 2 to 10+ members at various stages"
+      ]
     },
     "ttWallet": {
-      "title": "TT Wallet Referral Program",
-      "description": "Designing an engaging referral system",
-      "role": "Lead UX Designer",
-      "team": "Cross-functional team of 8"
+      "title": "TT Wallet Referral Program: Driving platform coin price up 16%, user growth 20%",
+      "description": "To drive the development of the TT Wallet and the ThunderCore ecosystem, I designed a referral system integrated with TT Mining to ensure seamless user participation. Through data-driven and user research, I created a feature that not only promotes user growth but also enhances the liquidity of the ecosystem. Facing the complexity of business requirements and the challenge of fake accounts, my solution brought a 20% MAU growth within one month of launch and a 30% increase in user asset liquidity.",
+      "businessImpacts": [
+        "MAU growth by 20%",
+        "Referral program launched within one month, with 5% increase in new user acquisition",
+        "Reduced 65% fake account registrations, improving ecosystem health",
+        "User asset liquidity increased by 30%, strengthening ecosystem stability",
+        "NFT reward average open rate of 87%"
+      ],
+      "projectDescriptions": [
+        "Product designer",
+        "2022.06-08, 2 months",
+        "Cross-functional team of 8",
+        "iOS/Android App"
+      ]
     },
     "thunderCore": {
       "title": "ThunderCore User Research",
       "description": "Understanding blockchain user behavior",
-      "role": "UX Researcher",
-      "team": "Research team of 5"
+    
+      "businessImpacts": [
+        "Identified key user pain points leading to 35% improvement in user satisfaction",
+        "Research findings led to 25% reduction in user drop-off rate",
+        "Recommendations resulted in 40% increase in daily active users",
+        "Established new UX guidelines for blockchain applications"
+      ],
+      "projectDescriptions": [
+        "UX Researcher",
+        "2022",
+        "Research team of 5"
+      ]
     }
   },
   "specialties": {
